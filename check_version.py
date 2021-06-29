@@ -166,10 +166,9 @@ def brute_version(host, port , protocol, version):
         if r.status_code ==200:
             return 200, v
     return "not 200", ecp_version
-def netals_download(apikey, query, fields=[],source_type="include",datatype="response",size=10,indices = ""):
+def netlas_download(apikey, query, fields=[],source_type="include",datatype="response",size=10,indices = ""):
     netlas_connection = netlas.Netlas(api_key=apikey)
-    # query_res = netlas_connection.query(query="port:7001")
-    # print(netlas.helpers.dump_object(data=query_res))
+
 
     itr = netlas_connection.download(query=query, fields=fields, source_type=source_type, datatype=datatype, size=size, indices=indices)
     return itr
@@ -178,7 +177,7 @@ def netals_download(apikey, query, fields=[],source_type="include",datatype="res
 
 with open('result.csv', mode='w') as res:
     res_writer = csv.writer(res, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
-    targets_itr = netals_download(apikey,query,fields, size=size)
+    targets_itr = netlas_download(apikey,query,fields, size=size)
     for target in targets_itr:
         owa = ""
         owa_theme_version = ""
