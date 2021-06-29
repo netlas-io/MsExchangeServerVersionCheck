@@ -5,7 +5,8 @@ To search for Microsoft Exchange around the world use our service https://netlas
 
 # Code
 [NSE](exchange-version.nse) for one host check.
-[Python script](check_version.py) with nelas API for mass check (set netlas api key in code)
+
+[Python script](check_version.py) with nelas API for mass check. set netlas api key (https://netlas.io/) in code and install netlas-sdk (pip3 install netlas)
 
 # Working Principle 
 

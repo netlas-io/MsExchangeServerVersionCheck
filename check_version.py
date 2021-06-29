@@ -13,7 +13,9 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 #change API key and download size
 apikey = "SetApiKey"
 size = 20
-
+if apikey == "SetApiKey":
+    print("Set API key from https://app.netlas.io")
+    sys.exit(0)
 
 user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36"
 headers = {'User-Agent':user_agent}
